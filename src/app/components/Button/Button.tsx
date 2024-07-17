@@ -1,4 +1,4 @@
-
+// src/app/components/Button/Button.tsx
 import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 import React from "react";
@@ -36,7 +36,6 @@ const button = cva(
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
   underline?: boolean;
-  intent?: "primary" | "secondary"; // Certifique-se de que a propriedade intent está incluída aqui
   href: string;
 }
 

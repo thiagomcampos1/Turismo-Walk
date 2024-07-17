@@ -83,10 +83,10 @@ const insights = [
 
 ];
 
-const BlogPage = () => {
+const BlogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const handlePageChange = (pageIndex) => {
+  const handlePageChange = (pageIndex: number) => {
     setCurrentPage(pageIndex);
   };
 
@@ -152,16 +152,6 @@ const BlogPage = () => {
           ))}
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
 
       <footer className="bg-blue-600 text-white py-8">
         <div className="container mx-auto px-4 lg:px-35 flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0">

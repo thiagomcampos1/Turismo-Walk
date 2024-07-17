@@ -1,33 +1,45 @@
-// Button.stories.tsx
+// src/app/components/Button/Button.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
-  title: "Button",
+  title: 'Example/Button',
   component: Button,
-  args: {
-    intent: "primary", // Certifique-se de que intent é uma propriedade válida em ButtonProps
-    underline: false,
-    children: "Button",
-    size: "lg",
-    href: "#",
-  },
   argTypes: {
-    intent: {
-      options: ["primary", "secondary"],
-      control: { type: "select" },
-    },
     size: {
-      options: ["sm", "lg"],
-      control: { type: "select" },
+      control: {
+        type: 'select',
+        options: ['sm', 'lg'],
+      },
+    },
+    intent: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary'],
+      },
+    },
+    underline: {
+      control: 'boolean',
+    },
+    href: {
+      control: 'text',
+    },
+    children: {
+      control: 'text',
     },
   },
-};
-
-type Story = StoryObj<typeof Button>;
-
-export const Default: Story = {
-  render: (args) => <Button {...args} />,
 };
 
 export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: {
+    size: 'lg',
+    intent: 'primary',
+    underline: false,
+    children: "Button",
+    href: "#",
+  },
+};
